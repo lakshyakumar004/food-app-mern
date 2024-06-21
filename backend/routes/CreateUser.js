@@ -8,7 +8,7 @@ const jwtSecret = "TheNameOfThisProjectIsEatsExpress##$$&&"
 
 router.post("/creatuser", [
     body('email').isEmail(),
-    body('name').isLength({ min: 6 }),
+    body('name').isLength({ min: 1 }),
     body('password', 'Incorrect Password').isLength({ min: 5 })]
     , async (req, res) => {
         const errors = validationResult(req);
